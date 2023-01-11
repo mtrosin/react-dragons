@@ -16,10 +16,20 @@ function SignIn() {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
 
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
+        fetch('http://localhost:5000/users/1', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((resp) => resp.json())
+        .then((user) => {
+            if(user.name != data.get('user') || user.password != data.get('password')) {
+                alert('O usuário ou a senha estão errados!');
+            } else {
+                alert('OK');
+            }
+        })
       };
     
       return (
