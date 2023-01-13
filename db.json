@@ -5,5 +5,6 @@
             "name": "admin",
             "password": "123456"
         }
-    ]
+    ],
+    "dragons": [{"createdAt":"2023-01-18","name":"Toothless","type":"Fire","histories":"","id":"47"},{"createdAt":"2023-01-17","name":"teste","type":"123","histories":[],"id":"48"},{"createdAt":"2023-01-18","name":"teste 4","type":"123","histories":[],"id":"49"},{"createdAt":"2023-01-25","name":"teste 3","type":"123","histories":[],"id":"51"},{"createdAt":"2023-01-17","name":"teste 3","type":"123","histories":[],"id":"52"},{"createdAt":"2023-01-17","name":"teste 1","type":"789","histories":[],"id":"53"},{"createdAt":"2023-01-04T19:01:25.377Z","name":"Fafnir","type":"Fire","histories":"","id":"54"},{"createdAt":"2023-01-05T22:19:25.969Z","name":"Fafnir","type":"Fire","histories":"","id":"56"},{"createdAt":"2023-01-09T02:06:22.060Z","name":"Fafnir","type":"Fire","histories":"","id":"57"},{"createdAt":"2023-01-09T18:43:14.846Z","name":"Fafnir","type":"Fire","histories":"","id":"58"},{"createdAt":"2023-01-10T14:18:04.031Z","name":"Fafnir","type":"Fire","histories":"","id":"59"},{"createdAt":"2023-01-11T12:55:48.757Z","name":"Fafnir","type":"Fire","histories":"","id":"60"}]
 }

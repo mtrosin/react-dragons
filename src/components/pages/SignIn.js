@@ -7,30 +7,28 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import styles from "./SignIn.module.css";
-import dragon from "../img/dragon.jpg";
+import dragon from "../../img/dragon.jpg";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
-const theme = createTheme();
+const theme = createTheme()
 
 function SignIn() {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
+    const handleSubmit = async (event) => {
+      event.preventDefault()
+      const data = new FormData(event.currentTarget)
 
-        fetch('http://localhost:5000/users/1', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((resp) => resp.json())
-        .then((user) => {
-            if(user.name != data.get('user') || user.password != data.get('password')) {
-                alert('O usuário ou a senha estão errados!');
-            } else {
-                alert('OK');
+      await axios.get('http://localhost:5000/users/1')
+        .then(defaultUser => {
+            if(data.get('user') == defaultUser.data.name && data.get('password') == defaultUser.data.password) {
+                localStorage.setItem("userName", defaultUser.data.name)
+                localStorage.setItem("userId", defaultUser.data.id)
+                return window.location.reload(false)
             }
+
+            alert('O usuário ou a senha estão errados!');
         })
-      };
+    };
     
       return (
         <ThemeProvider theme={theme}>
